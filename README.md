@@ -1,4 +1,4 @@
-dotfiles
-========
+Logan Fuller's dotfiles
+=======================
 
-My OSX dotfiles
+My OSX dotfiles. WIP right now, but stay tuned!

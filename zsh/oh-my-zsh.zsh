@@ -1,9 +1,9 @@
 # path to your oh-my-zsh installation.
-export OMZ=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # set name of the theme to load.
 # look in ~/.oh-my-zsh/themes/
-ZSH_THEME="clean"
+ZSH_THEME="robbyrussell"
 
 # how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=7
@@ -21,4 +21,4 @@ HIST_STAMPS="dd.mm.yyyy"
 plugins=(git brew)
 
 # run oh-my-zsh
-source $OMZ/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh

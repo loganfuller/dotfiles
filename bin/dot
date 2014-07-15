@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# dot
+#
+# `dot` handles installation, updates, things like that. Run it periodically
+# to make sure you're on the latest and greatest.
+export ZSH=$HOME/.dotfiles
+
+# Set OS X defaults
+$ZSH/osx/set-defaults.sh
+
+# Check homebrew is installed
+if test ! $(which brew)
+then
+    echo "  Installing Homebrew for you."
+    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" > /tmp/homebrew-install.log
+fi
+
+# Upgrade homebrew
+brew update && brew upgrade
+
+# Install homebrew packages
+$ZSH/homebrew/install.sh 2>&1

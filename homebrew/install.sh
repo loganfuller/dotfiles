@@ -6,6 +6,6 @@
 # using Homebrew.
 
 # Install homebrew packages
-brew install awscli hub
+brew install awscli hub wget ack
 
 exit 0

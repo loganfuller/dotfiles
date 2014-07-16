@@ -1,8 +1,6 @@
 # Sample gitconfig
 #
 
-[hub]
-        protocol = https
 [user]
         name = AUTHORNAME
         email = AUTHOREMAIL
@@ -24,6 +22,8 @@
         editor = vim
 [apply]
         whitespace = nowarn
+[web]
+        browser = google-chrome
 [mergetool]
         keepBackup = false
 [difftool]

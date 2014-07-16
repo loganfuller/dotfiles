@@ -6,6 +6,6 @@
 # using Homebrew.
 
 # Install homebrew packages
-brew install awscli hub wget ack
+brew install awscli hub wget ack tmux
 
 exit 0

@@ -18,7 +18,7 @@ HIST_STAMPS="dd.mm.yyyy"
 
 # oh-my-zsh plugins to be loaded (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git brew)
+plugins=(git brew sublime)
 
 # run oh-my-zsh
 source $ZSH/oh-my-zsh.sh

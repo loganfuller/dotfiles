@@ -13,6 +13,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 Plugin 'kien/ctrlp.vim' " fuzzy file searching
+Plugin 'scrooloose/nerdtree' " tree-based directory navigation
 
 " all of your Plugins must be added before the following line
 call vundle#end()
@@ -99,7 +100,7 @@ inoremap jj <Esc>
 inoremap jk <Esc>
 
 
-" CtrlP settings
+" CtrlP Settings
 " --------------
 
 " change the default mapping and the default command to invoke CtrlP
@@ -108,6 +109,13 @@ let g:ctrlp_cmd = 'CtrlP'
 
 " when invoked, unless a starting directory is specified, CtrlP will set its local working directory according to this variable
 let g:ctrlp_working_path_mode = 'ra'
+
+
+" NERDTree Settings
+" -----------------
+
+" Map ctrl-n to nerdtree
+map <C-n> :NERDTreeToggle<CR>
 
 
 " Backups

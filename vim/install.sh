@@ -10,3 +10,10 @@ if ! [ -f ~/.vim/colors/solarized.vim ]
 then
     curl -L -o ~/.vim/colors/solarized.vim https://raw.githubusercontent.com/altercation/solarized/master/vim-colors-solarized/colors/solarized.vim
 fi
+
+# Install Vundle plugin manager
+[[ -d ~/.vim/bundle ]] || mkdir -p ~/.vim/bundle
+if ! [ -f ~/.vim/bundle/Vundle.vim ]
+then
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi

@@ -2,6 +2,22 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Vundle Plugins
+" --------------
+
+filetype off " required by vundle
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
+Plugin 'kien/ctrlp.vim' " fuzzy file searching
+
+" all of your Plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on
+
 
 " Colours
 " -------
@@ -38,6 +54,7 @@ set ruler " show the cursor position all the time
 set showmatch " highlight matching [{()}]
 set mouse=a " enable mouse
 set confirm " Instead of failing a command because of unsaved changes, ask if you wish to save changed files.
+set autoread " Set to auto read when a file is changed from the outside.
 
 
 " Searching
@@ -80,6 +97,17 @@ nnoremap <C-l> <C-w>l
 " More efficient escape bindings
 inoremap jj <Esc>
 inoremap jk <Esc>
+
+
+" CtrlP settings
+" --------------
+
+" change the default mapping and the default command to invoke CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" when invoked, unless a starting directory is specified, CtrlP will set its local working directory according to this variable
+let g:ctrlp_working_path_mode = 'ra'
 
 
 " Backups

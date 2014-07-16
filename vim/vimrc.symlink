@@ -59,6 +59,12 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
+" Much nicer window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " Indentation settings for using 4 spaces instead of tabs.
 set shiftwidth=4
 set softtabstop=4

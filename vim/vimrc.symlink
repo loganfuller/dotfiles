@@ -2,62 +2,70 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
 
-" Better command-line completion
-set wildmenu
+" Colours
+" -------
 
-set nobackup    " do not keep a backup file
-set history=50    " keep 50 lines of command line history
-set ruler   " show the cursor position all the time
-set showcmd   " display incomplete commands
-set incsearch   " do incremental searching
+set background=dark " solarized dark
+colorscheme solarized " beautiful theme
+syntax on " enable syntax processing
 
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
 
-" In many terminal emulators the mouse works just fine, thus enable it.
-set mouse=a
+" Spaces & Tabs
+" -------------
 
-" Instead of failing a command because of unsaved changes, instead raise a
-" dialogue asking if you wish to save changed files.
-set confirm
+set shiftwidth=4 " number of visual spaces per TAB
+set softtabstop=4 " number of spaces in TAB when editing
+set expandtab " tabs are spaces
+
+" When opening a new line and no filetype-specific indenting is enabled, keep
+" the same indent as the line you're currently on
+set autoindent
+
+
+" UI Config
+" ---------
 
 " Always display the status line, even if only one window is displayed
 set laststatus=2
 
-" When opening a new line and no filetype-specific indenting is enabled, keep
-" the same indent as the line you're currently on. Useful for READMEs, etc.
-set autoindent
+set number " show line numbers on the left
+set showcmd " show command in bottom bar
+filetype indent on " load filetype-specific indent files (from ~/.vim/indent)
+set wildmenu " visual autocomplete for command menu
+set lazyredraw " redraw only when we need to.
+set ruler " show the cursor position all the time
+set showmatch " highlight matching [{()}]
+set mouse=a " enable mouse
+set confirm " Instead of failing a command because of unsaved changes, ask if you wish to save changed files.
+
+
+" Searching
+" ---------
 
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
 
-" Display line numbers on the left
-set number
+set incsearch " search as characters are entered
+set hlsearch " enable search highlighting
 
-" Switch syntax highlighting on, also switch on highlighting the last used search pattern.
-syntax on
-set hlsearch
+" return turns off search highlighting until the next search
+nnoremap <CR> :noh<CR><CR>
 
-" Theme
-set background=dark
-colorscheme solarized
 
-" Key mappings
-inoremap jj <Esc>
-inoremap jk <Esc>
+" Folding
+" -------
 
-" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
-" which is the default
-map Y y$
+" Nothing for now - this is a placeholder
 
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
-" next search
-nnoremap <C-L> :nohl<CR><C-L>
+
+" Moving
+" ------
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
 
 " Much nicer window navigation
 nnoremap <C-h> <C-w>h
@@ -65,7 +73,21 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Indentation settings for using 4 spaces instead of tabs.
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+
+" Leader Shortcuts
+" ----------------
+
+" More efficient escape bindings
+inoremap jj <Esc>
+inoremap jk <Esc>
+
+
+" Backups
+" -------
+
+" Move backups to the tmp folder
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup

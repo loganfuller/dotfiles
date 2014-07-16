@@ -13,7 +13,6 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 Plugin 'kien/ctrlp.vim' " fuzzy file searching
-Plugin 'scrooloose/nerdtree' " tree-based directory navigation
 
 " all of your Plugins must be added before the following line
 call vundle#end()
@@ -111,11 +110,12 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
 
-" NERDTree Settings
+" netrw Settings
 " -----------------
 
-" Map ctrl-n to nerdtree
-map <C-n> :NERDTreeToggle<CR>
+" Map ctrl-n to netrw
+map <C-n> :E<cr>
+let g:netrw_liststyle=3 " nicer directory layout
 
 
 " Backups

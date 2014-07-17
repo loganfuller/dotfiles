@@ -28,7 +28,8 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
   'git' \
   'homebrew' \
-  'osx'
+  'osx' \
+  'tmux'
 
 
 #

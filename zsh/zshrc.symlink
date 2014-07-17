@@ -18,3 +18,4 @@ done
 
 # self explanatory
 alias reload='. ~/.zshrc'
+alias cl='clear'

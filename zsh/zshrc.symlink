@@ -1,10 +1,7 @@
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-
-# shortcut to this dotfiles path is $DZSH
-export DZSH=$HOME/.dotfiles
-
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/Development/repos
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -13,20 +10,11 @@ then
     source ~/.localrc
 fi
 
-# all of our zsh files
-typeset -U config_files
-config_files=($DZSH/**/*.zsh)
-
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
+# load the aliases files
+for file in ${ZDOTDIR:-$HOME}/.dotfiles/**/aliases.zsh
 do
     source $file
 done
 
-# load everything but the path files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-do
-    source $file
-done
-
-unset config_files
+# self explanatory
+alias reload='. ~/.zshrc'

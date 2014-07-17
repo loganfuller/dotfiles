@@ -1,11 +1,19 @@
-#!/bin/sh
+#!/bin/zsh
 #
-# zsh & oh-my-zsh
+# zsh & prezto
 #
 
-# Check for zsh
-if [ ! -d "~/.oh-my-zsh" ]
-then
-    echo "Installing oh-my-zsh for you."
-    wget --no-check-certificate http://install.ohmyz.sh -O - | sh
+# Check for prezto
+if [ ! -d "~/.zprezto" ]; then
+    echo "Installing prezto for you."
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+    # Create default config
+    setopt EXTENDED_GLOB
+	for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+		ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+	done
+
+	# Set zsh as default shell
+	chsh -s /bin/zsh
 fi

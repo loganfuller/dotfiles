@@ -6,5 +6,8 @@ set -e
 
 cd "$(dirname $0)"/..
 
+# shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/.dotfiles
+
 # find the installers and run them iteratively
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done

@@ -157,5 +157,8 @@ then
   fi
 fi
 
+# Insall Vim plugins with vundle
+vim +PluginInstall +qall
+
 echo ''
 echo '  All installed!'

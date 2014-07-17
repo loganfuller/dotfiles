@@ -86,17 +86,21 @@ nnoremap <CR> :noh<CR><CR>
 nnoremap j gj
 nnoremap k gk
 
-" Much nicer window navigation
+" much nicer window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
 
 " Leader Shortcuts
 " ----------------
 
-" More efficient escape bindings
+" more efficient escape bindings
 inoremap jj <Esc>
 inoremap jk <Esc>
 
@@ -116,7 +120,7 @@ let g:ctrlp_working_path_mode = 'ra'
 " -----------------
 
 " Map ctrl-n to netrw
-map <C-n> :E<cr>
+map <C-n> :Ex<cr>
 let g:netrw_liststyle=3 " nicer directory layout
 
 

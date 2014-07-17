@@ -1,9 +1,12 @@
 # path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# custom folder
+export ZSH_CUSTOM=$HOME/.dotfiles/zsh/custom
+
 # set name of the theme to load.
 # look in ~/.oh-my-zsh/themes/
-ZSH_THEME="robbyrussell"
+ZSH_THEME="dieter"
 
 # how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=7

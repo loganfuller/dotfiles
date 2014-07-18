@@ -10,10 +10,10 @@ if [ ! -d "~/.zprezto" ]; then
 
     # Create default config
     setopt EXTENDED_GLOB
-	for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-		ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-	done
+    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+        ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+    done
 
-	# Set zsh as default shell
-	chsh -s /bin/zsh
+    # Set zsh as default shell
+    chsh -s /bin/zsh
 fi

@@ -8,4 +8,8 @@
 # Install homebrew packages
 brew install awscli hub wget ack tmux macvim
 
+# Install cask (used to install GUI apps)
+brew tap caskroom/cask
+brew install brew-cask
+
 exit 0

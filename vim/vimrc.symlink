@@ -140,8 +140,11 @@ let g:netrw_banner = 0 " suppress info banner
 " automatically display all buffers when there's only one tab open
 let g:airline#extensions#tabline#enabled = 1
 
-" don't load powerline fonts
-let g:airline_powerline_fonts = 0
+" load powerline fonts
+let g:airline_powerline_fonts = 1
+
+" theme, yo
+let g:airline_theme = 'solarized'
 
 
 " Backups

@@ -17,3 +17,9 @@ if ! [ -e ~/.vim/bundle/Vundle.vim ]
 then
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
+
+# Install powerline fonts
+if ! [ -e ~/Library/Fonts/inconsolata-powerline.otf  ]
+then
+    curl -L -o ~/Library/Fonts/inconsolata-powerline.otf https://raw.githubusercontent.com/Lokaltog/powerline-fonts/master/Inconsolata/Inconsolata%20for%20Powerline.otf
+fi

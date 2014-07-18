@@ -40,5 +40,5 @@ unbind C-b
 bind C-a send-prefix
 
 # split windows like vim
-bind s split-window -v
-bind v split-window -h
+bind s split-window -v -c "#{pane_current_path}"
+bind v split-window -h -c "#{pane_current_path}"

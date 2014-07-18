@@ -58,6 +58,7 @@ set mouse=a " enable mouse
 set confirm " Instead of failing a command because of unsaved changes, ask if you wish to save changed files.
 set autoread " Set to auto read when a file is changed from the outside.
 set textwidth=80 colorcolumn=+1 " display marker at 80 char column
+set cursorline " add horizontal line to highlight cursor location
 
 " Searching
 " ---------

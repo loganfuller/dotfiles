@@ -129,6 +129,7 @@ let g:netrw_liststyle = 3 " nicer directory layout
 let g:netrw_preview = 0 " open preview with p - preview shown in horizontal split (CTRL-W_z to close)
 let g:netrw_use_errorwindow = 0 " netrw errors don't need to be closed
 let g:netrw_browse_split = 2 " netrw windows opened in vertical split
+let g:netrw_banner = 0 " suppress info banner
 
 " Backups
 " -------

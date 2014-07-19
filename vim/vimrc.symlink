@@ -62,6 +62,7 @@ set autoread " Set to auto read when a file is changed from the outside.
 set textwidth=80 colorcolumn=+1 " display marker at 80 char column
 set cursorline " add horizontal line to highlight cursor location
 
+
 " Searching
 " ---------
 
@@ -103,6 +104,8 @@ set splitright
 " Leader Shortcuts
 " ----------------
 
+let mapleader="," " remap leader
+
 " more efficient escape bindings
 inoremap jj <Esc>
 inoremap jk <Esc>
@@ -122,16 +125,78 @@ let g:ctrlp_working_path_mode = 'ra'
 " netrw Settings
 " -----------------
 
-" NOTE: Press o to open in horizontal split, <cr> to open in vertical split
-
-" Map ctrl-n to netrw
-map <C-n> :Ex<cr>
-
 let g:netrw_liststyle = 3 " nicer directory layout
 let g:netrw_preview = 0 " open preview with p - preview shown in horizontal split (CTRL-W_z to close)
 let g:netrw_use_errorwindow = 0 " netrw errors don't need to be closed
 let g:netrw_browse_split = 2 " netrw windows opened in vertical split
 let g:netrw_banner = 0 " suppress info banner
+let g:netrw_fastbrowse = 0 " never reuse directory listings
+
+if &ft ==# "netrw"
+    nnoremap <silent> <C-N> <C-l> " reload netrw
+endif
+
+" NOTE: code below was found at
+" http://ivanbrennan.github.io/blog/2014/01/16/rigging-vims-netrw/
+
+" Toggle sidebar
+fun! VexToggle(dir)
+    if exists("t:vex_buf_nr")
+        call VexClose()
+    else
+        call VexOpen(a:dir)
+    endif
+endf
+
+" Open sidebar
+fun! VexOpen(dir)
+    let g:netrw_browse_split=4    " open files in previous window
+    let vex_width = 35
+
+    execute "Vexplore " . a:dir
+    let t:vex_buf_nr = bufnr("%")
+    wincmd H
+
+    call VexSize(vex_width)
+endf
+
+" close sidebar
+fun! VexClose()
+    let cur_win_nr = winnr()
+    let target_nr = ( cur_win_nr == 1 ? winnr("#") : cur_win_nr )
+
+    1wincmd w
+    close
+    unlet t:vex_buf_nr
+
+    execute (target_nr - 1) . "wincmd w"
+    call NormalizeWidths()
+endf
+
+" set and lock sidebar width
+fun! VexSize(vex_width)
+    execute "vertical resize" . a:vex_width
+    set winfixwidth
+    call NormalizeWidths()
+endf
+
+" equalize widths of the remaining windows
+fun! NormalizeWidths()
+    let eadir_pref = &eadirection
+    set eadirection=hor
+    set equalalways! equalalways!
+    let &eadirection = eadir_pref
+endf
+
+" equalize widths when a vertical split is opened with v
+augroup NetrwGroup
+    autocmd! BufEnter * call NormalizeWidths()
+augroup END
+
+" toggle sidebar in directory vim was opened in
+noremap <Leader><Tab> :call VexToggle(getcwd())<CR>
+" toggle sidebar in same directory as last file
+noremap <Leader>` :call VexToggle("")<CR>
 
 
 " airline Settings

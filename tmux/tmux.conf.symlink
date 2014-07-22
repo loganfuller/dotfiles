@@ -1,3 +1,6 @@
+# fix issue with clipboard access in tmux windows
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+
 # improve colors
 set -g default-terminal 'screen-256color'
 
@@ -22,10 +25,10 @@ bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iq v
 bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys 'C-\\') || tmux select-pane -l"
 
 # keybindings to make resizing easier
-bind -r C-h resize-pane -L
-bind -r C-j resize-pane -D
-bind -r C-k resize-pane -U
-bind -r C-l resize-pane -R
+bind -r C-h resize-pane -L 3
+bind -r C-j resize-pane -D 3
+bind -r C-k resize-pane -U 3
+bind -r C-l resize-pane -R 3
 
 # better resizing
 setw -g aggressive-resize on

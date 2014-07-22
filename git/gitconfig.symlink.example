@@ -19,7 +19,7 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
+        editor = mvim -v
         pager = less -r
 [apply]
         whitespace = nowarn

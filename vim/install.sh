@@ -23,3 +23,11 @@ if ! [ -e ~/Library/Fonts/inconsolata-powerline.otf  ]
 then
     curl -L -o ~/Library/Fonts/inconsolata-powerline.otf https://raw.githubusercontent.com/Lokaltog/powerline-fonts/master/Inconsolata/Inconsolata%20for%20Powerline.otf
 fi
+
+# Compile supporting code for You Complete Me plugin
+if ! [ -e ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_client_support.so ]
+then
+    cd ~/.vim/bundle/YouCompleteMe
+    ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+    cd ~/.dotfiles
+fi

@@ -20,6 +20,7 @@ Plugin 'airblade/vim-gitgutter' " display git info in the gutter
 Plugin 'mxw/vim-jsx' " jsx syntax highlighting
 Plugin 'scrooloose/syntastic' " syntax checking
 Plugin 'editorconfig/editorconfig-vim' " enforce stylistic guidelines
+Plugin 'Valloric/YouCompleteMe' " automagical code completion
 
 " all of your Plugins must be added before the following line
 call vundle#end()

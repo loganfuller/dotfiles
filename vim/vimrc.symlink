@@ -130,6 +130,11 @@ inoremap jk <Esc>
 " replace <C-l>
 nnoremap <silent> <leader>l <C-l>
 
+" Javascript linting
+:nnoremap <silent> <leader>jb ggdG:r!js-beautify %<CR>ggdd
+
+" convert single quotes to double quotes
+:nnoremap <leader>dq :%s/'/"/g<CR>
 
 " CtrlP Settings
 " --------------

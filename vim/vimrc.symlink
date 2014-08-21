@@ -22,6 +22,7 @@ Plugin 'scrooloose/syntastic' " syntax checking
 Plugin 'editorconfig/editorconfig-vim' " enforce stylistic guidelines
 Plugin 'Valloric/YouCompleteMe' " automagical code completion
 Plugin 'pangloss/vim-javascript' " Javascript code highlighting and indent
+Plugin 'scrooloose/nerdtree' " File browser
 
 " all of your Plugins must be added before the following line
 call vundle#end()
@@ -131,7 +132,7 @@ inoremap jk <Esc>
 nnoremap <silent> <leader>l <C-l>
 
 " Javascript linting
-:nnoremap <silent> <leader>jb ggdG:r!js-beautify %<CR>ggdd
+:nnoremap <silent> <leader>jb ggdG:r!js-beautify -X %<CR>Go<Esc>ggdd
 
 " convert single quotes to double quotes
 :nnoremap <leader>dq :%s/'/"/g<CR>
@@ -217,9 +218,23 @@ augroup NetrwGroup
 augroup END
 
 " toggle sidebar in directory vim was opened in
-noremap <Leader><Tab> :call VexToggle(getcwd())<CR>
+" noremap <Leader><Tab> :call VexToggle(getcwd())<CR>
 " toggle sidebar in same directory as last file
-noremap <Leader>` :call VexToggle("")<CR>
+" noremap <Leader>` :call VexToggle("")<CR>
+
+
+" NERDTree Settings
+" -----------------
+
+" sidebar width
+let g:NERDTreeWinSize = 35
+
+" better keymappings for opening splits
+let g:NERDTreeMapOpenVSplit = "v"
+let g:NERDTreeMapOpenSplit = "s"
+
+" toggle nerdtree file browser
+noremap <Leader><Tab> :NERDTreeToggle<CR>
 
 
 " airline Settings

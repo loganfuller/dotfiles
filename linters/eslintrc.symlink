@@ -121,7 +121,7 @@
 /**
  * Style
  */
-    "indent": [4, 4, {"indentSwitchCase": true}],   // http://eslint.org/docs/rules/indent
+    "indent": [2, 4, {"indentSwitchCase": true}],   // http://eslint.org/docs/rules/indent
     "brace-style": [2,               // http://eslint.org/docs/rules/brace-style
       "1tbs", {
       "allowSingleLine": true
@@ -199,6 +199,7 @@
         "defaultProps",
         "getDefaultProps",
         "getInitialState",
+        "_getStateFromStores",
         "getChildContext",
         "componentWillMount",
         "componentDidMount",
@@ -207,9 +208,10 @@
         "componentWillUpdate",
         "componentDidUpdate",
         "componentWillUnmount",
-        "/^on.+$/",
-        "/^get.+$/",
-        "/^render.+$/",
+        "/^_?on.+$/",
+        "/^_?get.+$/",
+        "/^_?render.+$/",
+        "/^_.+$/",
         "render"
       ]
     }]

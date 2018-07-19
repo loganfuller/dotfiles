@@ -22,9 +22,9 @@ alias cl='clear'
 # added by travis gem
 [ -f /Users/loganfuller/.travis/travis.sh ] && source /Users/loganfuller/.travis/travis.sh
 
-source /Users/loganfuller/.iterm2_shell_integration.zsh
+# source /Users/loganfuller/.iterm2_shell_integration.zsh
 
 # Node version manager
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
 

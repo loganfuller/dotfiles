@@ -6,14 +6,14 @@
 # using Homebrew.
 
 # Install homebrew packages
-brew install awscli hub wget ack tmux macvim reattach-to-user-namespace node
+brew install awscli wget ack tmux macvim reattach-to-user-namespace node
 
 # Install NeoVim
 # brew tap neovim/neovim
 # brew install --HEAD neovim
 
 # Install cask (used to install GUI apps)
-brew tap caskroom/cask
-brew install brew-cask
+# brew tap caskroom/cask
+# brew install brew-cask
 
 exit 0
